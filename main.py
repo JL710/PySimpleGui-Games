@@ -41,5 +41,6 @@ def main():
                 window["entry"]("")
 
 if __name__ == "__main__":
+    psg.theme("DarkAmber")
     while True:
         main()

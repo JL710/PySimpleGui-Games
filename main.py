@@ -1,6 +1,5 @@
 import PySimpleGUI as psg  
 import Hangman
-from Graphics import graphics
 import sys
 
 

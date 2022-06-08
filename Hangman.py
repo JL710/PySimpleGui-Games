@@ -18,7 +18,7 @@ class Hangman:
                 self.__wrong_guessed_letters.append(letter.upper())
             return False
 
-    def get_guessed_letters(self) -> dict:
+    def get_guessed_letters(self) -> bool:
         return tuple(self.__correct_guessed_letters + self.__wrong_guessed_letters)
 
     def get_number_of_wrong_guessed_letters(self) -> int:

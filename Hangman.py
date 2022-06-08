@@ -1,6 +1,6 @@
 class Hangman:
     def __init__(self, word: str, allowed_trys: int):
-        self.__word_to_guess = (word)
+        self.__word_to_guess = word
         self.__wrong_guessed_letters = []
         self.__correct_guessed_letters = []
         self.__allowed_trys = allowed_trys

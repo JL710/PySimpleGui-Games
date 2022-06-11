@@ -75,3 +75,11 @@ if __name__ == "__main__":
                     # get back to menu
                     window["-MENU-"].update(visible=True)
                     window["-GAME-"].update(visible=False)
+
+                elif ticcy.is_finished():
+                    # won message
+                    psg.popup_ok("Game Over", "No one won! :(")
+                    
+                    # get back to menu
+                    window["-MENU-"].update(visible=True)
+                    window["-GAME-"].update(visible=False)

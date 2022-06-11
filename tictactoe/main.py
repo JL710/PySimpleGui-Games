@@ -4,6 +4,8 @@ import PySimpleGUI as psg
 import sys
 
 
+psg.theme("DarkAmber")
+
 # game layout
 field = [
     [psg.Button("", key="-00-", size=(2, 1)), psg.Button("", key="-10-", size=(2, 1)), psg.Button("", key="-20-", size=(2, 1))],

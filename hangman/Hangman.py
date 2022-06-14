@@ -24,7 +24,7 @@ class Hangman:
     def get_number_of_wrong_guessed_letters(self) -> int:
         return len(self.__wrong_guessed_letters)
 
-    def get_uncompleted_word(self) -> tuple:
+    def get_uncompleted_word(self) -> str:
         word = ""
         for index, letter in enumerate(self.__word_to_guess):
             if letter.upper() in self.__correct_guessed_letters or letter.lower() in self.__correct_guessed_letters:

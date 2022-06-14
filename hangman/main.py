@@ -32,10 +32,10 @@ def main():
                     window["letters"](hangman.get_guessed_letters())
                     # check if won
                     if hangman.is_finished():
-                        psg.popup_error("You Lose")
+                        psg.popup_error(f"You Lose. The Correct word was {hangman.get_word()}")
                         break
                     if hangman.is_won():
-                        psg.popup_ok("You Won")
+                        psg.popup_ok(f"You Won! {hangman.get_word()}")
                         break
                 window["entry"]("")
 

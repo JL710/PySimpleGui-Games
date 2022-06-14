@@ -38,3 +38,7 @@ class Hangman:
 
     def is_won(self) -> bool:
         return self.__word_to_guess == self.get_uncompleted_word()
+
+    def get_word(self) -> str:
+        if self.is_finished() or self.is_won():
+            return self.__word_to_guess

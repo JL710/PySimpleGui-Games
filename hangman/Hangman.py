@@ -1,6 +1,6 @@
 class Hangman:
     def __init__(self, word: str, allowed_trys: int):
-        self.__word_to_guess = (word)
+        self.__word_to_guess = word
         self.__wrong_guessed_letters = []
         self.__correct_guessed_letters = []
         self.__allowed_trys = allowed_trys
@@ -18,13 +18,13 @@ class Hangman:
                 self.__wrong_guessed_letters.append(letter.upper())
             return False
 
-    def get_guessed_letters(self) -> dict:
+    def get_guessed_letters(self) -> bool:
         return tuple(self.__correct_guessed_letters + self.__wrong_guessed_letters)
 
     def get_number_of_wrong_guessed_letters(self) -> int:
         return len(self.__wrong_guessed_letters)
 
-    def get_uncompleted_word(self) -> tuple:
+    def get_uncompleted_word(self) -> str:
         word = ""
         for index, letter in enumerate(self.__word_to_guess):
             if letter.upper() in self.__correct_guessed_letters or letter.lower() in self.__correct_guessed_letters:
@@ -38,3 +38,7 @@ class Hangman:
 
     def is_won(self) -> bool:
         return self.__word_to_guess == self.get_uncompleted_word()
+
+    def get_word(self) -> str:
+        if self.is_finished() or self.is_won():
+            return self.__word_to_guess

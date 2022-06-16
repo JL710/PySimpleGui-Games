@@ -27,8 +27,7 @@ def main():
             case "button_guess_letter":
                 if values["entry"] != "" and len(values["entry"]) == 1:
                     hangman.guess_letter(values["entry"])
-                    uncompleted_word = "".join([x if x != "" else "#" for x in hangman.get_uncompleted_word()])
-                    window["word"](uncompleted_word)
+                    window["word"]("".join([x if x != "" else "#" for x in hangman.get_uncompleted_word()]))
                     window["image"](f"{hangman.get_number_of_wrong_guessed_letters()}.png")
                     window["letters"](hangman.get_guessed_letters())
                     # check if won

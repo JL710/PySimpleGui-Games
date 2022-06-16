@@ -11,7 +11,7 @@ def main():
     hangman = Hangman.Hangman(word, 8)
     
     layout = [
-        [psg.Text(hangman.get_uncompleted_word(), key="word", expand_x=True, justification="center", font="bold")],
+        [psg.Text("".join([x if x != "" else "#" for x in hangman.get_uncompleted_word()]), key="word", expand_x=True, justification="center", font="bold")],
         [psg.In(key="entry", enable_events=False), psg.Button("Guess Letter", key="button_guess_letter")],
         [psg.Image(source="0.png", key="image", expand_x=True)],
         [psg.Listbox(values=[], key="letters", size=(1, 5), expand_x=True)]
@@ -27,7 +27,8 @@ def main():
             case "button_guess_letter":
                 if values["entry"] != "" and len(values["entry"]) == 1:
                     hangman.guess_letter(values["entry"])
-                    window["word"](hangman.get_uncompleted_word())
+                    uncompleted_word = "".join([x if x != "" else "#" for x in hangman.get_uncompleted_word()])
+                    window["word"](uncompleted_word)
                     window["image"](f"{hangman.get_number_of_wrong_guessed_letters()}.png")
                     window["letters"](hangman.get_guessed_letters())
                     # check if won

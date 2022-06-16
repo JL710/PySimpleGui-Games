@@ -24,13 +24,13 @@ class Hangman:
     def get_number_of_wrong_guessed_letters(self) -> int:
         return len(self.__wrong_guessed_letters)
 
-    def get_uncompleted_word(self) -> str:
-        word = ""
+    def get_uncompleted_word(self) -> tuple:
+        word = ()
         for index, letter in enumerate(self.__word_to_guess):
             if letter.upper() in self.__correct_guessed_letters or letter.lower() in self.__correct_guessed_letters:
-                word += self.__word_to_guess[index]
+                word = tuple(word + (self.__word_to_guess[index],))
             else:
-                word += "#"
+                word = tuple(word + ("",))
         return word
 
     def is_finished(self) -> bool:
